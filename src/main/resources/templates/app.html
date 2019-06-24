@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>detail</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/material-icons.css" th:href="@{/css/material-icons.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/shop_details.css" th:href="@{/css/shop_details.css}">
+    <link rel="stylesheet" href="../static/css/index-style-three.css" th:href="@{/css/index-style-three.css}">
+    <link rel="stylesheet" href="../static/css/breadcrumb.css" th:href="@{/css/breadcrumb.css}">
+    <script src="../static/js/jquery-3.0.0.min.js" th:src="@{/js/jquery-3.0.0.min.js}"></script>
+    <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav-index">
+        <a class="navbar-brand nav-width-logo" th:href="@{/}">
+            <!-- <img src="./images/logo.png" alt="" class="user-img"> -->
+            <div class="shop-logo-icon">
+                <i class="icon-boNiLQhu6 icon-logo-style"></i>
+            </div>
+            <div class="shop-title">
+                <p>
+                    企业应用商店
+                    <small>铱王星科技</small>
+                </p>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex justify-content-between align-items-center nav-bar">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!--<ul class="navbar-nav">-->
+                <!--<li class="nav-item active">-->
+                <!--<a class="nav-link" href="#">后端产品</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#">移动应用</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#">前端设计</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+            </div>
+            <div class="user-img-box">
+                <div class="login-register">
+                    <a href="javascript: void(0)">登录/注册</a>
+                </div>
+                <!--<div class="dropdown">-->
+                <!--&lt;!&ndash; <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"-->
+                <!--data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--Dropdown button-->
+                <!--</button> &ndash;&gt;-->
+                <!--<div class="user-img-div" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--<img src="./images/logo.png" alt="" class="user-img">-->
+                <!--</div>-->
+                <!--<div class="dropdown-menu p-a-left" aria-labelledby="dropdownMenuButton">-->
+                <!--<a class="dropdown-item" href="#">登录</a>-->
+                <!--<a class="dropdown-item" href="#">注册</a>-->
+                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="box-container mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 details-md12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" th:href="@{/}">首页</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" th:text="${app?.name}">data</li>
+                        </ol>
+                    </nav>
+                    <div class="shop-details-content">
+                        <div class="shop-details-title">
+                            <div class="detail-img-shop"
+                                style="background-image: url('../static/images/vericode.jpeg')"
+                                 th:style="'background-image: url('+${app?.icon}+')'">
+                            </div>
+                            <div class="shop-detail-title-sure">
+                                <div class="shop-detail-title-left">
+                                    <h2 class="detail-title-h2" th:text="${app?.name}"> Google Keep Chrome 扩展程序</h2>
+                                    <p class="shop-upload-smallTitle" th:text="${app?.title}">一个好程序</p>
+                                    <p class="shop-upload-time">
+                                        <span class="shop-time-span">版本: 1.16.3 rev1</span>
+                                        |
+                                        <span class="shop-time-span">大小: 444.00MB</span>
+                                    </p>
+                                    <div class="shop-star">
+                                        <ul class="shop-star-ul">
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                        </ul>
+                                        <p class="number">
+                                            1324
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="shop-detail-title-right">
+                                    <a href="#" class="download" th:text="'￥' + ${app?.price}">￥62.00</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outline">
+
+                            <div id="carouselExampleIndicators" class="carousel slide carousel-m-t"
+                                data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div th:each="image,irow:${app?.images}"
+                                        th:class="${irow.count} == 1? 'carousel-item active' : 'carousel-item'">
+                                        <div class="detail-img-shop banner-backImg"
+                                            style="background-image: url('http://localhost:6061/imagePath/67566553e89c4b81b83cc3757d3ff76e2.jpg');"
+                                            th:style="'background-image: url('+${image}+')'"></div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="orther">
+                            <div class="detail-content">
+                                <p class="detail-p" th:text="${app?.description}">
+                                    《海王》是一部2018年美国超级英雄电影，改编自DC漫画旗下的同名角色，本片为DC扩展宇宙的第六部作品。由温子仁执导并与杰夫·琼斯共同创作故事，大卫·莱斯利·强森-麦古德瑞克与威尔·比尔负责撰写剧本。电影主演包括杰森·莫玛、安伯·赫德、威廉·达福、帕特里克·威尔森、杜夫·朗格林、叶海亚·阿巴杜-马汀二世与妮可·基德曼。故事主要描述海底王国亚特兰提斯的继承人亚瑟·库瑞必须站出来领导他的人民并成为世界的英雄。在此前，摩莫亚饰演的亚瑟·库瑞／海王曾于《蝙蝠侠大战超人：正义黎明》及《正义联盟》中登场。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <div class="detail-content over-hid copyright-pad">
+                                <p class="copyright_p">开发者: <span>info@blockbyte.de</span></p>
+                                <p class="copyright_p">版权: <span>Popular Bookmarks</span></p>
+                                <p class="copyright_p">发布日期: <span th:text="${#dates.format(app?.ctime, 'yyyy-MM-dd')}">2019年4月8日</span>
+                            </p>
+                            <p class="copyright_p">电话: <span>12312312312</span></p>
+                        </div>
+                    </div>
+                    <div class="b-comment">
+                        <p class="b-comment-p" th:if="${sum == 0} ? '0' : sum" th:text="'总共有' +${sum}+ '条评论'">
+                            总共有0条评论</p>
+                        <div class="b-comment-content">
+                            <div class="" th:each="comment:${comments}">
+                                <div class="now-comment">
+                                    <div class="b-user-title">
+                                        <img src="../static/images/testimonial-1.jpg" alt="???">
+                                        <div class="username">
+                                            <a href="javascript:void(0)" class="users">邓小亮</a>
+
+                                            <span class="time-comment">2018/9/20</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-30 mb-2" th:if="${!#lists.isEmpty(comment?.comment?.id)}">
+                                        <div class="floor">
+                                            <div class="b-user-title">
+                                                <div class="username">
+                                                    <a href="javascript:void(0)" class="users">邓小亮</a>
+
+                                                    <span class="time-comment">2018/9/20</span>
+                                                </div>
+                                            </div>
+                                            <div class="comment-content border-0 pl-3">
+                                                <p th:text="${comment?.comment?.content}">asdasd</p>
+                                                <div class="b-action-left text-right f-l-i small-op">
+                                                    <a th:href="@{'/comment/' + ${comment?.id} + '/praise'}">
+                                                        <i class="material-icons">favorite_border</i>
+                                                        <span th:text="${comment?.praises}">0</span>
+                                                    </a>
+                                                    <a href="javascript:void(0)" class="reply">
+                                                        <i class="material-icons">reply</i>
+                                                        回复
+                                                    </a>
+
+                                                    <a th:href="@{'/comment/' + ${comment?.id} + '/delete'}"
+                                                       class="delete">
+                                                        删除
+                                                    </a>
+
+                                                </div>
+                                                <div class="display_form mt-4 over-hid">
+                                                    <form th:action="@{'/app/' + ${app?.id} + '/comment/' + ${comment?.id} + '/praise'}"
+                                                          method="post" class="b-form">
+                                                                    <textarea class="form-control"
+                                                                              id="exampleFormControlTextarea1" rows="5"
+                                                                              placeholder="留下您的评论再走呗"
+                                                                              name="content"></textarea>
+                                                        <div class="float-right">
+                                                            <button type="submit"
+                                                                    class="btn btn-dark btn-style-send mt-4">发表评论
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-dark btn-style-send mt-4 del">
+                                                                取消
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content border-0">
+                                        <div class="ml-30">
+                                            <p th:text="${comment?.content}">asdasd</p>
+                                            <div class="b-action-left text-right f-l-i">
+                                                <a th:href="@{'/comment/' + ${comment?.id} + '/praise'}">
+                                                    <i class="material-icons">favorite_border</i>
+                                                    <span th:text="${comment?.praises}">0</span>
+                                                </a>
+                                                <a href="javascript:void(0)" class="reply">
+                                                    <i class="material-icons">reply</i>
+                                                    回复
+                                                </a>
+
+                                                <a th:href="@{'/comment/' + ${comment?.id} + '/delete'}" class="delete">
+                                                    删除
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <div class="display_form mt-4 over-hid">
+                                            <form th:action="@{'/app/' + ${app?.id} + '/comment/' + ${comment?.id} + '/praise'}"
+                                                  method="post" class="b-form">
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                                  rows="5"
+                                                                  placeholder="留下您的评论再走呗" name="content"></textarea>
+                                                <div class="float-right">
+                                                    <button type="submit" class="btn btn-dark btn-style-send mt-4">
+                                                        发表评论
+                                                    </button>
+                                                    <button type="button" class="btn btn-dark btn-style-send mt-4 del">
+                                                        取消
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-leavec">
+                    <p class="b-comment-p">在这里分享您的意见</p>
+                    <form th:action="@{'/app/' + ${app?.id} + '/comment'}"
+                          enctype="multipart/form-data" method="post"
+                          class="b-form">
+                                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
+                                                  rows="5"
+                                                  placeholder="留下您的评论再走呗"></textarea>
+                        <button class="btn btn-dark btn-md btn-style-send mt-4 float-right" id="btn-send" type="submit">
+                            发表评论
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-index">
+    <div class="container">
+        <div class="text-center footer-div">
+            <div class="record">
+                <span>© 2018 15913.com</span>
+                <a href="javascript:void(0)" class="record-number">粤ICP备09210383号-33</a>
+            </div>
+            <ul class="f-menu">
+                <li class="f-ul-link"><a href="javascript: void(0)">首页</a></li>
+                <li class="f-ul-link"><a href="javascript: void(0)">隐私权</a></li>
+                <li class="f-ul-link"><a href="javascript: void(0)">服务条款</a></li>
+                <li class="f-ul-link"><a href="javascript: void(0)">发送反馈</a></li>
+                <li class="f-ul-link"><a href="javascript: void(0)">常见问题</a></li>
+                <li class="f-ul-link"><a href="javascript: void(0)">帮助</li>
+                <li class="f-ul-link"><a href="javascript: void(0)">联系我们</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

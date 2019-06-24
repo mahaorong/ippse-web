@@ -1,0 +1,18 @@
+.breadcrumb{
+    background-color: #fff;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px !important;
+}
+.breadcrumb a{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+.breadcrumb{
+    border-bottom: 1px solid #e6e8eb;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

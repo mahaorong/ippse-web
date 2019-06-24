@@ -1,0 +1,155 @@
+.shop-tab-title-box {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.shop-tab-title-box h4 {
+    margin-bottom: 0px;
+}
+
+.f-menu {
+    margin-top: 10px;
+}
+
+.f-menu li {
+    display: inline-block
+}
+
+.record-number {
+    margin-left: 20px;
+}
+
+.record {
+    margin-top: 50px;
+}
+
+.record span,
+.record a,
+.f-menu li a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #aeaeae;
+}
+
+.f-menu li {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.shop-box {
+    border: none;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+.p-a-left {
+    left: inherit;
+    right: 0px;
+}
+
+.user-img {
+    width: 35px;
+    height: 35px;
+}
+
+.user-img-div {
+    cursor: pointer;
+}
+
+.shop-box .card-text {
+    font-size: 13px;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 50px;
+    overflow: hidden;
+    color: #5f5f5f;
+}
+
+.card-title a {
+    color: #000
+}
+
+.card-title a:hover {
+    text-decoration: none;
+    color: #0056b3;
+
+}
+
+.shop-tab-title-box a {
+    color: #2196f3;
+    font-size: 12px;
+}
+
+.shop-tab-title-box a:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.card-back-img {
+    width: 100%;
+    height: 215px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.small {
+    font-size: 80% !important;
+    font-weight: 40 !important;
+}
+
+.login-register {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.banner-backImg {
+    width: auto;
+    height: 400px;
+}
+
+.card-shop-price {
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: #dc3545;
+    line-height: 23px;
+}
+
+.star-price-div {
+    border-top: 1px solid #e6e8eb;
+    padding-top: 15px;
+    margin-top: 40px;
+}
+
+.bg-nav-index {
+    background-color: #2196f3;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.bg-nav-index i{
+    color: #fff;
+}
+.bg-nav-index a{
+    color: #fff !important;
+    font-size: 18px;
+}
+.login-register a{
+    font-size: 14px;
+}

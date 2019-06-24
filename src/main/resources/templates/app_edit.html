@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/addPage.css" th:href="@{/markdown/css/addPage.css}">
+    <link rel="stylesheet" href="./css/editormd.min.css" th:href="@{/markdown/css/editormd.min.css}">
+    <link rel="stylesheet" href="./css/bootstrap-treeview.css" th:href="@{/css/bootstrap-treeview.css}">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" th:href="@{/markdown/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="./css/fileinput.css" th:href="@{/css/fileinput.css}">
+    <link rel="stylesheet" href="./css/back-style.css" th:href="@{/css/back-style.css}">
+    <link rel="stylesheet" href="./css/gly-icon.css" th:href="@{/css/gly-icon.css}">
+</head>
+<body>
+<div class="number_dir">
+    <div id="treeview3" class=""></div>
+</div>
+
+<div class="content_div" th:each="app:${app}">
+    <div class="form-group">
+        <label>名称：</label>
+        <input type="email" class="form-control" id="name" name="name" th:value="${app?.cateitems}">
+    </div>
+    <div class="form-group">
+        <label>标题：</label>
+        <input type="email" class="form-control" id="title" name="title" th:value="${app?.title}">
+    </div>
+    <div class="form-group">
+        <label>价格：</label>
+        <input type="email" class="form-control" id="price" name="price" th:value="${app?.price}">
+    </div>
+    <!--<div class="form-group">-->
+    <!--<label for="exampleInputEmail3">标签输入：</label>-->
+    <!--<div class="form-control add_tab_div">-->
+    <!--<div class="tab_div">-->
+    <!--<div class="no_tab">你还没有添加标签</div>-->
+    <!--</div>-->
+    <!--<hr>-->
+    <!--<input type="text" class="form-control tab_input" placeholder="输入标签" list="tabs">-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="form-group">
+        <label>封面图片：</label>
+        <input type="file" class="file" id="head">
+    </div>
+    <div class="form-group">
+        <label>banner图片：</label>
+        <input type="file" class="file" id="image" multiple="multiple">
+    </div>
+
+    <div class="form-group">
+        <div id="test-editormd">
+            <textarea style="display:none;" name="description" id="description">[[${app?.description}]]</textarea>
+        </div>
+    </div>
+    <div class="button_div">
+        <button class="btn btn-success" th:onclick="save([['/app/' + ${app?.id} + '/update/']])">提交</button>
+    </div>
+</div>
+<datalist id="tabs">
+    <option value="BMW">
+    <option value="Ford">
+    <option value="Volvo">
+</datalist>
+</body>
+<script src="./js/jquery.min.js" th:src="@{/markdown/js/jquery.min.js}"></script>
+<script src="./js/bootstrap.min.js" th:src="@{/markdown/js/bootstrap.min.js}"></script>
+<script src="./js/editormd.js" th:src="@{/markdown/js/editormd.js}"></script>
+<script src="./js/addPage.js" th:src="@{/markdown/js/addPage.js}"></script>
+<script src="./js/bootstrap-treeview.js" th:src="@{/js/bootstrap-treeview.js}"></script>
+<script src="./js/fileinput.js" th:src="@{/js/fileinput.js}"></script>
+<script src="./js/zh.js" th:src="@{/js/zh.js}"></script>
+<script th:inline="javascript">
+
+$("#head").fileinput({
+    initialPreview: [
+        [[${app?.icon}]]
+    ],
+    initialPreviewAsData: true,
+    deleteUrl: "/site/file-delete",
+    overwriteInitial: true,
+    language : 'zh',
+    showUpload: false, //是否显示上传按钮
+    showRemove : true, //显示移除按钮
+    showPreview : true, //是否显示预览
+    showCaption: false,//是否显示标题
+    autoReplace : true,
+    msgFilesTooMany: "选择上传的文件数量 超过允许的最大数值！",
+    browseClass : "btn btn-primary", //按钮样式
+});
+
+$("#image").fileinput({
+    initialPreview:
+        [[${app?.images}]]
+    ,
+    initialPreviewAsData: true,
+    deleteUrl: "/site/file-delete",
+    language : 'zh',
+    showUpload: false, //是否显示上传按钮
+    showRemove : true, //显示移除按钮
+    showPreview : true, //是否显示预览
+    showCaption: false,//是否显示标题
+    autoReplace : true,
+    msgFilesTooMany: "选择上传的文件数量 超过允许的最大数值！",
+    browseClass : "btn btn-primary", //按钮样式
+});
+
+    // 分类显示
+    let checkbox_arr = [];
+    $(function () {
+        window.defaultData = [[${category?.cateitems}]];
+        $('#treeview3').treeview({
+            levels: 99,
+            data: defaultData,
+            list: false,
+            showCheckbox: true,
+            onNodeChecked: function (event, data) {
+                checkbox_arr.push(data.id);
+                console.log(checkbox_arr);
+            },
+            onNodeUnchecked: function (event, data) {
+                let new_arr = [];
+                for(var i in checkbox_arr){
+                    if(checkbox_arr[i] != data.id){
+                        new_arr.push(checkbox_arr[i]);
+                    }
+                }
+                checkbox_arr = new_arr;
+                console.log(checkbox_arr);
+            }
+        });
+        $('#treeview3').treeview('collapseAll', { silent: true });
+    })
+
+
+    $('#form-tags-1').tagsInput();
+
+</script>
+
+</html>

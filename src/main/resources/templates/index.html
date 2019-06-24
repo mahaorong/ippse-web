@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/material-icons.css" th:href="@{/css/material-icons.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/index-style-three.css" th:href="@{/css/index-style-three.css}">
+    <script src="../static/js/jquery-3.0.0.min.js" th:src="@{/js/jquery-3.0.0.min.js}"></script>
+    <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav-index">
+        <a class="navbar-brand nav-width-logo" th:href="@{/}">
+            <div class="shop-logo-icon">
+                <i class="icon-boNiLQhu6 icon-logo-style"></i>
+            </div>
+            <div class="shop-title">
+                <p>
+                    企业应用商店
+                    <small>铱王星科技</small>
+                </p>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex justify-content-between align-items-center nav-bar">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+            <div class="user-img-box">
+                <div class="login-register">
+                    <a href="javascript: void(0)">登录/注册</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="box-container">
+        <div class="container">
+            <div class="shop-box mt-5 border-box">
+                <div class="shop-tab-title-box">
+                    <h4>个性化推荐</h4>
+                    <a href="#" th:href="@{/all}">更多</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4" th:each="app:${apps}">
+
+                        <div class="card border-raduis-0">
+                            <a th:href="@{'/app/'+${app?.id}}" href="#">
+                                <!-- <img class="card-img-top"
+                                    src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22304%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20304%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169ff9139b3%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A15pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169ff9139b3%22%3E%3Crect%20width%3D%22304%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22105.2734375%22%20y%3D%2296.7171875%22%3EImage%20cap%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                                    th:src="${app?.icon}" alt="Card image cap"> -->
+                                <div class="card-back-img"
+                                    style="background-image: url('./static/images/vericode.jpeg')"
+                                    th:style="'background-image: url('+${app?.icon}+')'">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="#" th:href="@{'/app/'+${app?.id}}" th:text="${app?.name}">
+                                        这是一个卡片
+                                    </a>
+                                </h5>
+                                <p class="card-text" th:text="${app?.title}">
+                                    这是一个卡片内容
+                                    这是一个卡片内容这是一个卡片内容这是一个卡片内容这是一个卡片内容这是一个卡片内容
+                                    这是一个卡片内容
+                                    这是一个卡片内容
+                                </p>
+                                <div class="star-price-div">
+                                    <p class="card-shop-price" th:text="'￥' + ${app?.price}">￥62.00</p>
+                                    <div class="shop-star align-items-center justify-content-between">
+                                        <ul class="shop-star-ul">
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_half</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_border</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_border</i>
+                                            </li>
+                                            <li>
+                                                <p class="number">
+                                                    1,324
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-danger small border-raduis-0">加入购物车</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-box mt-5 border-box">
+                <div class="shop-tab-title-box">
+                    <h4>作者推荐</h4>
+                    <a href="javascript:void(0)">更多</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+
+                        <div class="card border-raduis-0">
+                            <a th:href="@{'/app/'+${app?.id}}" href="#">
+                                <!-- <img class="card-img-top"
+                                            src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22304%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20304%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169ff9139b3%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A15pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169ff9139b3%22%3E%3Crect%20width%3D%22304%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22105.2734375%22%20y%3D%2296.7171875%22%3EImage%20cap%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                                            th:src="${app?.icon}" alt="Card image cap"> -->
+                                <div class="card-back-img" style="background-image: url('./images/vericode.jpeg')">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="#">
+                                        这是一个卡片
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    这是一个卡片内容
+                                    这是一个卡片内容这是一个卡片内容这是一个卡片内容这是一个卡片内容这是一个卡片内容
+                                    这是一个卡片内容
+                                    这是一个卡片内容
+                                </p>
+                                <div class="star-price-div">
+                                    <p class="card-shop-price">￥62.00</p>
+                                    <div class="shop-star align-items-center justify-content-between">
+                                        <ul class="shop-star-ul">
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_half</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_border</i>
+                                            </li>
+                                            <li>
+                                                <i class="material-icons">star_border</i>
+                                            </li>
+                                            <li>
+                                                <p class="number">
+                                                    1,324
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-danger small border-raduis-0">加入购物车</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-index">
+        <div class="container">
+            <div class="text-center footer-div">
+                <div class="record">
+                    <span>© 2018 15913.com</span>
+                    <a href="javascript:void(0)" class="record-number">粤ICP备09210383号-33</a>
+                </div>
+                <ul class="f-menu">
+                    <li class="f-ul-link"><a href="javascript: void(0)">首页</a></li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">隐私权</a></li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">服务条款</a></li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">发送反馈</a></li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">常见问题</a></li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">帮助</li>
+                    <li class="f-ul-link"><a href="javascript: void(0)">联系我们</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
